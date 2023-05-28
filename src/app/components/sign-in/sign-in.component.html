@@ -1,0 +1,26 @@
+<div style="padding-left:40px;top:50px; position:relative;" class="allign">
+    <div>
+      <div>
+        <h1>Sign In</h1>
+        <div>
+          <input type="text" class="formControl" placeholder="Username" #userName required>
+        </div>
+        <div>
+          <input type="password" class="formControl" placeholder="Password" #userPassword required>
+        </div><br>
+        <div>
+          <button ng-model="isLoggedIn()" ng-init="isLoggedIn() = true" type="button" mat-flat-button color="accent" value="Log in" type="submit" class="btn" (click)="authService.SignIn(userName.value, userPassword.value)">Sign In</button>
+        </div><br>
+    
+        <div>
+          <button type="button" mat-flat-button color="accent" class="btn" routerLink="/forgot-password">Forgot Password</button>
+        </div>
+      </div>
+      <div>
+        <h4>Don't have an account? Sign up now!</h4>
+        <button type="button" mat-flat-button color="accent" class="btn" routerLink="/register-user">Sign Up</button>
+        
+      </div>
+    </div>
+  </div>
+

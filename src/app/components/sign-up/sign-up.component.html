@@ -1,0 +1,34 @@
+<div style="padding-left:40px;top:50px; position:relative;" class="allign">
+    <div>
+    
+        <h1>Sign Up</h1>
+
+        <div>
+          <input
+            type="email"
+            class="formControl"
+            placeholder="Email Address"
+            #userEmail
+            required
+          />
+        </div>
+
+        <div class="formGroup">
+          <input
+            type="email"
+            class="formControl"
+            placeholder="Password"
+            #userPwd
+            required
+          />
+        </div>
+        
+        <button type="button" mat-flat-button color="accent" value="Sign Up" class="btn" (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
+
+      </div>
+      <div>
+          <h4>Already have an account?</h4>
+          <button type="button" mat-flat-button color="accent" class="btn" routerLink="/sign-in">Sign In</button>
+      </div>
+    </div>
+  

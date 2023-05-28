@@ -1,0 +1,13 @@
+<div style="margin: auto;width: 58%;padding: 10px;">
+<button mat-flat-button color="accent" class="button-size glow-on-hover" routerLink="home">Home</button>
+<button mat-flat-button color="accent" class="button-size glow-on-hover button2" routerLink="learn-hiragana">Learn hiragana</button>
+<button mat-flat-button color="accent" class="button-size glow-on-hover button3" routerLink="take-test">Take test</button>
+<button mat-flat-button color="accent" class="button-size glow-on-hover button4" routerLink="sign-in" *ngIf="!authService.isLoggedIn">Sign in</button>
+<button mat-flat-button color="accent" class="button-size glow-on-hover button4" *ngIf="authService.isLoggedIn" routerLink="dashboard">My Profile</button>
+
+<!--<button mat-flat-button color="accent" class="button-size glow-on-hover button3" routerLink="com">Comments</button>-->
+</div>
+
+
+
+<router-outlet></router-outlet>

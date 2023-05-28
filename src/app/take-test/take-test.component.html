@@ -1,0 +1,29 @@
+<div>
+    <header>
+        <h2 class="title">🌸 Japanese Test: Choose the right answer!</h2>   
+    </header>
+
+
+<form style="padding-left:40px;">
+    <div *ngFor="let question of questions; let i = index">
+      <p style=" padding-right: 40px; font-size:25px; color:#000000; font-family:Arial, Helvetica, sans-serif;">{{ question.question }}</p><br>
+      <mat-radio-group [(ngModel)]="userAnswers[i]" name="answer{{ i }}">
+        <mat-radio-button *ngFor="let option of question.options" [value]="question.options.indexOf(option) + 1">
+          {{ option }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <br><br>
+    </div>
+  </form>
+  
+
+<br>
+<div style="padding-left:40px;">
+<div style="font-size:25px; color:#000000; font-family:Arial, Helvetica, sans-serif;">やった！！You have finished your test! Click on the submit button to see the results!</div>
+<br>
+
+<button mat-flat-button color="accent" (click)="calculateScore()" onclick="scrollToBottom()" >Submit</button>
+<p style=" font-size:25px; color:#000000; font-family:Arial, Helvetica, sans-serif;"*ngIf="showScore">Score: {{ score }}</p>
+</div>
+<br><br>
+

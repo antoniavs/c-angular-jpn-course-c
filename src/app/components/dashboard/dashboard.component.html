@@ -1,0 +1,37 @@
+<div style="padding:40px;">
+    <div>
+      <main role="main" class="allign">
+        <div>
+          <div>
+            <h1 class="h2">🌸 こんにちは！^ ^ Welcome to your User Profile! </h1>
+          </div>
+          <div *ngIf="authService.userData as user">
+            <div>
+              <div style="padding-left:15px;">
+                <div>
+                
+                  </div> <!--for uploading pfp-->
+                  <div class="avatar-container">
+                    <input type="file" (change)="onFileSelected($event)" accept="image/*" id="fileInput">
+                    <div class="avatar-preview" *ngIf="avatarUrl">
+                      <img [src]="avatarUrl" alt="Avatar">
+                    </div>
+                    <label for="fileInput">Choose File</label>
+                    <button (click)="uploadAvatar()">Upload Avatar</button>
+                  </div>
+                  
+              </div>
+                  <!--<h1>(=^・^=) <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>-->
+                  <h1>(=^・^=) <strong>{{user.displayName}}</strong></h1>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p><br><br>
+                  <button type="button" mat-flat-button color="accent" value="Sign Out" class="btn" (click)="authService.SignOut()">Sign Out</button>
+                </div>
+              </div>
+            
+          
+        
+      
+    
+  

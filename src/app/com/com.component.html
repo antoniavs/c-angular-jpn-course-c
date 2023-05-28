@@ -1,0 +1,25 @@
+<p>hi</p>
+<section>
+    <button (click)="getComments()" mat-raised-button>Get comments</button>
+    <mat-list role="list">
+      <mat-list-item role="list" *ngFor="let student of commentsFromDB">
+        {{student.Name}}
+      </mat-list-item>
+    </mat-list>
+  </section>
+  <section>
+    
+      <label>Enter person name</label>
+      <input matInput type="text" [(ngModel)]="newCommentName">
+      <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    
+      <label>Enter person content</label>
+      <input matInput type="text" [(ngModel)]="newCommentContent">
+      <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+        <mat-icon>close</mat-icon>
+      </button>
+
+    <button (click)="addComment()" mat-raised-button>Add comment</button>
+  </section>

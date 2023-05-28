@@ -1,0 +1,19 @@
+<div style="padding-left:40px;top:50px; position:relative;" class="allign">
+    <div>
+      <div>
+        <h1>Thank You for Registering</h1>
+        <div *ngIf="authService.userData as user">
+          <h4>We have sent a confirmation email to <strong>{{user.email}}</strong>.</h4>
+          <h4>Please check your email and click on the link to verfiy your email address.</h4>
+        </div>
+        
+        <div>
+          <button type="button" mat-flat-button color="accent" class="btn" (click)="authService.SendVerificationMail()">Resend Verification</button>
+        </div>
+        <br>
+      
+      <div>
+        <button type="button" mat-flat-button color="accent" class="btn" routerLink="/sign-in">Sign In</button>
+      </div>
+    </div>
+  
